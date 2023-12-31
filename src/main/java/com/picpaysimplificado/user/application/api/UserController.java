@@ -17,7 +17,7 @@ public class UserController implements UserAPI {
         log.info("[inicia] UserController - createUser");
         UserResponse createdUser = userService.createUser(userRequest);
         log.info("[finaliza] UserController - createUser");
-        return null;
+        return createdUser;
     }
 
 }
