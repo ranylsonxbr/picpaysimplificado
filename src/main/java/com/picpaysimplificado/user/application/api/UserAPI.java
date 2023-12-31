@@ -9,6 +9,6 @@ public interface UserAPI {
 
     @PostMapping
     @ResponseStatus(code = HttpStatus.CREATED)
-    UserResponse saveUser(@RequestBody UserRequest userRequest);
+    UserResponse createUser(@RequestBody UserRequest userRequest);
 
 }
