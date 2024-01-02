@@ -5,6 +5,7 @@ import com.picpaysimplificado.user.application.api.UserRequest;
 import jakarta.persistence.*;
 import lombok.*;
 import java.math.BigDecimal;
+import java.util.UUID;
 
 @Entity(name = "users")
 @Table(name = "users")
@@ -13,8 +14,8 @@ import java.math.BigDecimal;
 @EqualsAndHashCode(of="id")
 public class User {
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long id;
+    @GeneratedValue(strategy = GenerationType.AUTO)
+    private UUID id;
     private String firstName;
     private String lastName;
     @Column(unique = true)

@@ -11,8 +11,14 @@ import org.springframework.stereotype.Repository;
 @RequiredArgsConstructor
 public class UserInfraRepository implements UserRepository {
 
+
+    private final UserSpringDataJPA userSpringDataJPA;
+
     @Override
     public User salva(User user) {
-        return null;
+        log.info("[inicia] UserInfraRepository - salva");
+        userSpringDataJPA.save(user);
+        log.info("[finaliza] UserInfraRepository - salva");
+        return user;
     }
 }
